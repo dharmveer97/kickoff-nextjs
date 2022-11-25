@@ -16,6 +16,7 @@
     "@graphql-tools/merge": "^8.3.12",
     "@graphql-tools/schema": "^9.0.10",
     "apollo-server": "^3.11.1",
+    "bcryptjs": "^2.4.3",
     "convict": "^6.2.3",
     "deepmerge": "^4.2.2",
     "dotenv": "^16.0.3",
