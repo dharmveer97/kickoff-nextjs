@@ -9,6 +9,5 @@ export default {
   address: 'London Uk',
   telephone: '123131',
   email: 'test@hotmail.com',
-  apiUrl: 'http://localhost:3000', // for development
-  // apiUrl: 'http://example.com/api/graphql', // for live
+  apiUrl: 'http://localhost:3000/api/graphql', // for development
 };

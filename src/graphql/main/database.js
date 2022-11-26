@@ -47,7 +47,8 @@ UserSchema.methods.comparePassword = async function (candidatePassword) {
 };
 
 const getModel = () => {
-  if (mongoose.models.User) {
+  if (mongoose?.models?.User) {
+    console.log(mongoose.model('User'));
     return mongoose.model('User');
   }
   return mongoose.model('User', UserSchema);
