@@ -5,10 +5,9 @@ import Layout from '../components/Layout';
 import Hero from '../components/home/Hero';
 
 const allHerosQuery = gql`
-query{
+query {
   me {
     email
-    id
     name
   }
 }
@@ -16,9 +15,8 @@ query{
 
 function Index({ heros }) {
   const { data } = useQuery(allHerosQuery);
-  const userData1 = data || {};
+  console.log(data);
 
-  console.log(userData1, 'userData1');
   return (
     <Layout>
       <NextSeo
