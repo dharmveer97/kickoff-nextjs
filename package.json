@@ -21,6 +21,7 @@
     "deepmerge": "^4.2.2",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
+    "micro-cors": "^0.1.1",
     "mongoose": "^6.7.3",
     "next": "13.0.5",
     "next-seo": "^5.14.1",

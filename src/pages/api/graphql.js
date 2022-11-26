@@ -4,6 +4,10 @@ import schema from '../../graphql';
 import connectDatabase from '../../graphql/utils/mongoose';
 import apiConfig from '../../graphql/utils/config';
 
+const microCors = require('micro-cors');
+
+const cors = microCors({ allowMethods: ['PUT', 'POST'] });
+
 const apolloServer = new ApolloServer({
   schema,
   introspection: true,
@@ -15,6 +19,14 @@ const apolloServer = new ApolloServer({
   },
 });
 
-export default startServerAndCreateNextHandler(apolloServer, {
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
+
+const handler = startServerAndCreateNextHandler(apolloServer, {
   context: async (req, res) => ({ req, res }),
 });
+
+export default cors(handler);
