@@ -3,16 +3,7 @@ import { startServerAndCreateNextHandler } from '@as-integrations/next';
 import schema from '../../graphql';
 import connectDatabase from '../../graphql/utils/mongoose';
 import apiConfig from '../../graphql/utils/config';
-
-const allowCors = (fn) => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-  await fn(req, res);
-};
+import allowCors from '../../utils/cors';
 
 const apolloServer = new ApolloServer({
   schema,
