@@ -9,7 +9,6 @@ A starting point using ReactJs, bundled with awesome NextJs.
 - [MongoDB cloud](https://cloud.mongodb.com)
 - [Es-Lint](https://eslint.com)
 
-
 ## To use
 
 - Fork or download this repo
@@ -38,5 +37,3 @@ To deploy to zeit(vercel) now host
 ```
 yarn deploy
 ```
-
-
