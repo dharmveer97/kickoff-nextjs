@@ -18,7 +18,7 @@ const typeDefs = gql`
   # This type specifies the entry points into our API. In this case
   # there is only one - "me" - which returns a current user.
   type Query {
-    me: User
+    me: [User]
     # singleUser(email: String, userId: ID): User # returns a current user
   }
   type Mutation {
