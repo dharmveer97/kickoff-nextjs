@@ -13,6 +13,11 @@ function createIsomorphLink() {
   return new HttpLink({
     uri: '/api/graphql',
     credentials: 'same-origin',
+    headers: {
+      fetchOptions: {
+        mode: 'no-cors',
+      },
+    },
   });
 }
 

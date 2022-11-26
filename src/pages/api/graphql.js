@@ -4,9 +4,15 @@ import schema from '../../graphql';
 import connectDatabase from '../../graphql/utils/mongoose';
 import apiConfig from '../../graphql/utils/config';
 
-const microCors = require('micro-cors');
-
-const cors = microCors({ allowMethods: ['PUT', 'POST'] });
+const allowCors = (fn) => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  await fn(req, res);
+};
 
 const apolloServer = new ApolloServer({
   schema,
@@ -19,14 +25,8 @@ const apolloServer = new ApolloServer({
   },
 });
 
-// export const config = {
-//   api: {
-//     bodyParser: false,
-//   },
-// };
-
 const handler = startServerAndCreateNextHandler(apolloServer, {
   context: async (req, res) => ({ req, res }),
 });
 
-export default cors(handler);
+export default allowCors(handler);
