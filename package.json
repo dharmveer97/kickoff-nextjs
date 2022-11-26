@@ -2,6 +2,15 @@
   "name": "kickoff-nextjs",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "nextjs",
+    "kickoff-nextjs",
+    "react",
+    "mongoose",
+    "mongodb",
+    "apollo",
+    "apolloClient"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
