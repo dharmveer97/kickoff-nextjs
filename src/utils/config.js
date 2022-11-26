@@ -1,6 +1,6 @@
 export default {
   debug: process.env.NODE_ENV === 'development',
-  siteName: 'kickof',
+  siteName: 'kickoff-next-js',
   siteUrl: 'https://www.test.co.uk',
   instagram: 'https://www.instagram.com/my-site',
   facebook: 'https://www.facebook.com/my-site',
