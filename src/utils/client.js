@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { SchemaLink } from '@apollo/client/link/schema';
 import merge from 'deepmerge';
 import schema from '../graphql';
-import config from './config';
+// import config from './config';
 
 let apolloClient;
 
@@ -12,7 +12,7 @@ function createIsomorphLink() {
     return new SchemaLink({ schema });
   }
   return new HttpLink({
-    uri: config.debug ? config.graphQlUriDev : config.graphQlUri,
+    uri: '/api/graphql',
     credentials: 'same-origin',
   });
 }
